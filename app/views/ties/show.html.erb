@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ty.name %>
+</p>
+
+<p>
+  <strong>Last worn:</strong>
+  <%= @ty.last_worn %>
+</p>
+
+<p>
+  <strong>Date acquired:</strong>
+  <%= @ty.date_acquired %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @ty.price %>
+</p>
+
+<%= link_to 'Edit', edit_ty_path(@ty) %> |
+<%= link_to 'Back', ties_path %>

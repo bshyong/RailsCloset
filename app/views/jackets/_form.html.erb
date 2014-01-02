@@ -1,0 +1,33 @@
+<%= form_for(@jacket) do |f| %>
+  <% if @jacket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jacket.errors.count, "error") %> prohibited this jacket from being saved:</h2>
+
+      <ul>
+      <% @jacket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_worn %><br>
+    <%= f.datetime_select :last_worn %>
+  </div>
+  <div class="field">
+    <%= f.label :date_acquired %><br>
+    <%= f.datetime_select :date_acquired %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

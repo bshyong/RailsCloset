@@ -1,0 +1,33 @@
+<h1>Listing jackets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last worn</th>
+      <th>Date acquired</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jackets.each do |jacket| %>
+      <tr>
+        <td><%= jacket.name %></td>
+        <td><%= jacket.last_worn %></td>
+        <td><%= jacket.date_acquired %></td>
+        <td><%= jacket.price %></td>
+        <td><%= link_to 'Show', jacket %></td>
+        <td><%= link_to 'Edit', edit_jacket_path(jacket) %></td>
+        <td><%= link_to 'Destroy', jacket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jacket', new_jacket_path %>

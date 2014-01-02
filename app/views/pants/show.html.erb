@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pant.name %>
+</p>
+
+<p>
+  <strong>Last worn:</strong>
+  <%= @pant.last_worn %>
+</p>
+
+<p>
+  <strong>Date acquired:</strong>
+  <%= @pant.date_acquired %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @pant.price %>
+</p>
+
+<%= link_to 'Edit', edit_pant_path(@pant) %> |
+<%= link_to 'Back', pants_path %>

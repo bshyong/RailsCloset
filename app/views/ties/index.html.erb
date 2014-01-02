@@ -1,0 +1,33 @@
+<h1>Listing ties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last worn</th>
+      <th>Date acquired</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ties.each do |ty| %>
+      <tr>
+        <td><%= ty.name %></td>
+        <td><%= ty.last_worn %></td>
+        <td><%= ty.date_acquired %></td>
+        <td><%= ty.price %></td>
+        <td><%= link_to 'Show', ty %></td>
+        <td><%= link_to 'Edit', edit_ty_path(ty) %></td>
+        <td><%= link_to 'Destroy', ty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tie', new_ty_path %>

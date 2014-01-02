@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  last_worn: 2014-01-02 01:01:41
+  date_acquired: 2014-01-02 01:01:41
+  price: 1
+
+two:
+  name: MyString
+  last_worn: 2014-01-02 01:01:41
+  date_acquired: 2014-01-02 01:01:41
+  price: 1
