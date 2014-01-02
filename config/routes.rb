@@ -1,4 +1,5 @@
 RailsCloset::Application.routes.draw do
+
   resources :outfits
 
   resources :brands
@@ -16,6 +17,9 @@ RailsCloset::Application.routes.draw do
   resources :colors
 
   devise_for :users
+
+  root 'pages#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
