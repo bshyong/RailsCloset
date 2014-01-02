@@ -1,3 +1,16 @@
 <h1>Rails Closet</h1>
 <p>Pages#index</p>
+<% if user_signed_in? %>
+  <h3>Add an item</h3>
 
+  <%= link_to "Outfit", new_outfit_path, class: "btn btn-default btn-block" %>
+
+  <%= link_to "Shirt", new_shirt_path, class: "btn btn-default btn-block" %>
+
+  <%= link_to "Jacket", new_jacket_path, class: "btn btn-default btn-block" %>
+
+  <%= link_to "Pant", new_pant_path, class: "btn btn-default btn-block" %>
+
+  <%= link_to "Tie", new_ty_path, class: "btn btn-default btn-block" %>
+
+<% end %>
