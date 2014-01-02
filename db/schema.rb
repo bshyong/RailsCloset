@@ -11,10 +11,75 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140101090521) do
+ActiveRecord::Schema.define(version: 20140102090552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brands", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "colors", force: true do |t|
+    t.string   "name"
+    t.string   "hex"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jackets", force: true do |t|
+    t.string   "name"
+    t.datetime "last_worn"
+    t.datetime "date_acquired"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "outfits", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "last_worn"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pants", force: true do |t|
+    t.string   "name"
+    t.datetime "last_worn"
+    t.datetime "date_acquired"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shirts", force: true do |t|
+    t.string   "name"
+    t.datetime "last_worn"
+    t.datetime "date_acquired"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ties", force: true do |t|
+    t.string   "name"
+    t.datetime "last_worn"
+    t.datetime "date_acquired"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "types", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
