@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102090552) do
+ActiveRecord::Schema.define(version: 20140102101123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 20140102090552) do
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "color_id"
+    t.integer  "brand_id"
+    t.integer  "type_id"
+  end
+
+  add_index "jackets", ["brand_id"], name: "index_jackets_on_brand_id", using: :btree
+  add_index "jackets", ["color_id"], name: "index_jackets_on_color_id", using: :btree
+  add_index "jackets", ["type_id"], name: "index_jackets_on_type_id", using: :btree
+
+  create_table "jackets_outfits", force: true do |t|
+    t.integer "jacket_id"
+    t.integer "outfit_id"
   end
 
   create_table "outfits", force: true do |t|
@@ -47,6 +59,21 @@ ActiveRecord::Schema.define(version: 20140102090552) do
     t.datetime "updated_at"
   end
 
+  create_table "outfits_pants", force: true do |t|
+    t.integer "outfit_id"
+    t.integer "pant_id"
+  end
+
+  create_table "outfits_shirts", force: true do |t|
+    t.integer "outfit_id"
+    t.integer "shirt_id"
+  end
+
+  create_table "outfits_ties", force: true do |t|
+    t.integer "outfit_id"
+    t.integer "tie_id"
+  end
+
   create_table "pants", force: true do |t|
     t.string   "name"
     t.datetime "last_worn"
@@ -54,7 +81,14 @@ ActiveRecord::Schema.define(version: 20140102090552) do
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "color_id"
+    t.integer  "brand_id"
+    t.integer  "type_id"
   end
+
+  add_index "pants", ["brand_id"], name: "index_pants_on_brand_id", using: :btree
+  add_index "pants", ["color_id"], name: "index_pants_on_color_id", using: :btree
+  add_index "pants", ["type_id"], name: "index_pants_on_type_id", using: :btree
 
   create_table "shirts", force: true do |t|
     t.string   "name"
@@ -63,7 +97,14 @@ ActiveRecord::Schema.define(version: 20140102090552) do
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "color_id"
+    t.integer  "brand_id"
+    t.integer  "type_id"
   end
+
+  add_index "shirts", ["brand_id"], name: "index_shirts_on_brand_id", using: :btree
+  add_index "shirts", ["color_id"], name: "index_shirts_on_color_id", using: :btree
+  add_index "shirts", ["type_id"], name: "index_shirts_on_type_id", using: :btree
 
   create_table "ties", force: true do |t|
     t.string   "name"
@@ -72,7 +113,14 @@ ActiveRecord::Schema.define(version: 20140102090552) do
     t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "color_id"
+    t.integer  "brand_id"
+    t.integer  "type_id"
   end
+
+  add_index "ties", ["brand_id"], name: "index_ties_on_brand_id", using: :btree
+  add_index "ties", ["color_id"], name: "index_ties_on_color_id", using: :btree
+  add_index "ties", ["type_id"], name: "index_ties_on_type_id", using: :btree
 
   create_table "types", force: true do |t|
     t.string   "name"
