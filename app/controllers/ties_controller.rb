@@ -69,6 +69,6 @@ class TiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ty_params
-      params.require(:ty).permit(:name, :last_worn, :date_acquired, :price)
+      params.require(:tie).permit(:name, :last_worn, :date_acquired, :price)
     end
 end

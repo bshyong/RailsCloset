@@ -1,5 +1,10 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
+  <li><%= link_to "Outfits", outfits_path %></li>
+  <li><%= link_to "Shirts", shirts_path %></li>
+  <li><%= link_to "Jackets", jackets_path %></li>
+  <li><%= link_to "Pants", pants_path %></li>
+  <li><%= link_to "Ties", ties_path %></li>
   <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
 <% else %>
   <li><%= link_to "sign up", new_user_registration_path %></li>
