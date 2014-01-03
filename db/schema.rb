@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102101123) do
+ActiveRecord::Schema.define(version: 20140103072624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140102101123) do
     t.integer  "color_id"
     t.integer  "brand_id"
     t.integer  "type_id"
+    t.string   "image"
   end
 
   add_index "jackets", ["brand_id"], name: "index_jackets_on_brand_id", using: :btree
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140102101123) do
     t.integer  "color_id"
     t.integer  "brand_id"
     t.integer  "type_id"
+    t.string   "image"
   end
 
   add_index "pants", ["brand_id"], name: "index_pants_on_brand_id", using: :btree
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(version: 20140102101123) do
     t.integer  "color_id"
     t.integer  "brand_id"
     t.integer  "type_id"
+    t.string   "image"
   end
 
   add_index "shirts", ["brand_id"], name: "index_shirts_on_brand_id", using: :btree
@@ -116,6 +119,7 @@ ActiveRecord::Schema.define(version: 20140102101123) do
     t.integer  "color_id"
     t.integer  "brand_id"
     t.integer  "type_id"
+    t.string   "image"
   end
 
   add_index "ties", ["brand_id"], name: "index_ties_on_brand_id", using: :btree

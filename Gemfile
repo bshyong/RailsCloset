@@ -45,6 +45,11 @@ end
 gem 'opbeat'
 gem 'rails_12factor'
 gem 'figaro'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog'
+gem 'carrierwave_direct'
+gem 'sidekiq'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
