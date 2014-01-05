@@ -19,6 +19,30 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+  <%= f.fields_for :shirts do |builder| %>
+    <fieldset>
+      <%= builder.label :name %>
+      <%= builder.text_area :name %>
+    </fieldset>>
+  <% end %>
+  <%= f.fields_for :pants do |builder| %>
+    <fieldset>
+      <%= builder.label :name %>
+      <%= builder.text_area :name %>
+    </fieldset>>
+  <% end %>
+  <%= f.fields_for :jackets do |builder| %>
+    <fieldset>
+      <%= builder.label :name %>
+      <%= builder.text_area :name %>
+    </fieldset>>
+  <% end %>
+  <%= f.fields_for :ties do |builder| %>
+    <fieldset>
+      <%= builder.label :name %>
+      <%= builder.text_area :name %>
+    </fieldset>>
+  <% end %>
   <div class="field">
     <%= f.label :last_worn %><br>
     <%= f.datetime_select :last_worn %>

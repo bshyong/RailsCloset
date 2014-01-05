@@ -3,15 +3,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MimeTypes
   include CarrierWaveDirect::Uploader
 
-  # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
-  include Sprockets::Helpers::RailsHelper
-  include Sprockets::Helpers::IsolatedHelper
-
   process :set_content_type
   storage (Rails.env.production? ? :fog : :file)
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def default_url
+    ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   end
 
   version :thumb do
